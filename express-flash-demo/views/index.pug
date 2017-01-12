@@ -5,25 +5,26 @@ html
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='/bootstrap-3.3.6/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/font-awesome-4.7.0/css/font-awesome.min.css')
 
   body
     .container
       if messages.errors
         .alert.alert-danger.fade.in
           button.close(type='button', data-dismiss='alert')
-            | Close
+            i.fa.fa-times-circle-o
           for error in messages.errors
             div= error.msg
       if messages.info
         .alert.alert-info.fade.in
           button.close(type='button', data-dismiss='alert')
-            | Close
+            i.fa.fa-times-circle-o
           for info in messages.info
             div= info.msg
       if messages.success
         .alert.alert-success.fade.in
           button.close(type='button', data-dismiss='alert')
-            | Close
+            i.fa.fa-times-circle-o
           for success in messages.success
             div= success.msg
 
