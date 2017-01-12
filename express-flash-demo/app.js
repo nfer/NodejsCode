@@ -12,6 +12,11 @@ app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 app.get('/', (req, res) => {
+  res.locals.messages = {
+    errors:[{msg:"Error Tips"}],
+    info:[{msg:"Info Tips"}],
+    success:[{msg:"Success Tips"}]
+  };
   res.render('index');
 });
 app.post('/', (req, res, next) => {
